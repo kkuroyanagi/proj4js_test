@@ -12,19 +12,18 @@ const proj4 = require('proj4');
 
 // JGD2000
 // http://epsg.io/4612
-const jgd2000 = proj4.defs("EPSG:4612","+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs");
+proj4.defs("EPSG:4612","+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs");
 
 // TKY
 // http://epsg.io/4301
-const tky = proj4.defs("EPSG:4301","+proj=longlat +ellps=bessel +towgs84=-146.414,507.337,680.507,0,0,0,0 +no_defs");
+proj4.defs("EPSG:4301","+proj=longlat +ellps=bessel +towgs84=-146.414,507.337,680.507,0,0,0,0 +no_defs");
 
 // グローバルゲート付近の座標(WGS84)
-const coord_GG = [136.882899, 35.161954];
+const coordGG_jgd = [136.882899, 35.161954];
 
-// const tky_to_jgd2000 = proj4('EPSG4301', 'EPSG4612');
-const tky_to_jgd2000 = proj4(tky, jgd2000);
+const tky_to_jgd2000 = proj4('EPSG:4301', 'EPSG:4612');
 
-console.log(tky_to_jgd2000.inverse(coord_GG));
-
-console.log(tky_to_jgd2000.forward(tky_to_jgd2000));
-
+const coordGG_tky = tky_to_jgd2000.inverse(coordGG_jgd);
+console.log(coordGG_tky);
+const jgd_2nd = tky_to_jgd2000.forward(coordGG_tky);
+console.log(jgd_2nd);
