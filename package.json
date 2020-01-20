@@ -1,0 +1,24 @@
+{
+  "name": "proj4js_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "npm": "^6.10.0",
+    "proj4": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkuroyanagi/proj4js_test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kkuroyanagi/proj4js_test/issues"
+  },
+  "homepage": "https://github.com/kkuroyanagi/proj4js_test#readme"
+}
